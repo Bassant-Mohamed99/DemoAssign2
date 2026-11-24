@@ -1,0 +1,44 @@
+﻿@model int
+@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    string pageTitle = "Test Index";
+    int age = 25;
+    List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+}
+<h2>@Model</h2>
+
+<html>
+<head> @pageTitle
+</head>
+<body>
+<h1>
+welcome to first render</h1>
+<h2>@pageTitle</h2>
+<h2>@age</h2>
+
+<p>@age +1</p>
+<p>@(age+1)</p>
+
+    @if (age > 25)
+        {
+            <p>Adult</p>
+
+        }
+        else
+        {
+            <p>youth</p>
+        }
+        <ul>
+            @foreach(int n in numbers)
+            {
+               <li>number: @n</li> 
+            }
+        </ul>
+    </body>
+    <a href="/Home/Test/Index">Test link</a>
+    <a asp-controller="Home" asp-action="Index">Test link</a>
+    <a asp-controller="Test" asp-action="Hamada" asp-route="5">Test link</a>
+    @* comment*@
+    <!--comment-->
+
+</html>
